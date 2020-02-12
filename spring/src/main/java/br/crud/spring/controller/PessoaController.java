@@ -24,6 +24,7 @@ public class PessoaController {
 	@Autowired
 	PessoaService pessoaService;
 
+	
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Pessoa> cadastrar(@Valid @RequestBody Pessoa pessoa) {
 		try {
@@ -38,11 +39,13 @@ public class PessoaController {
 		return new ResponseEntity<String>(pessoaService.remover(id), HttpStatus.OK);
 	}
 
+	
 	@PutMapping("/atualizar")
 	public ResponseEntity<Pessoa> atualizar(@Valid @RequestBody Pessoa pessoa) {
 		return new ResponseEntity<Pessoa>(pessoaService.cadastrar(pessoa), HttpStatus.OK);
 	}
 
+	//localhost:8080/listar lista as pessoas listadas no bd
 	@GetMapping("/listar")
 	public ResponseEntity<List<Pessoa>> listar() {
 		return new ResponseEntity<List<Pessoa>>(pessoaService.listar(), HttpStatus.OK);

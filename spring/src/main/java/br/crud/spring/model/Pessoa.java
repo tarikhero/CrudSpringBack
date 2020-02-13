@@ -8,20 +8,29 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+//passando o nome da tabela, dentro do banco, pessoas
 @Entity
 @Table(name = "pessoas")
 public class Pessoa {
 
+	// para ele sempre gerar numeros de id diferentes, caso já tenha dados
+	// cadastrados no banco por outro lugar
+	// GenerationType.AUTO, atribui o valor padrão, deixa com que o provedor de
+	// persistencia decida.
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-	@GenericGenerator( name = "native", strategy = "native")
-		
+	@GenericGenerator(name = "native", strategy = "native")
+
+	// a pessoa tem um um id
 	private Long id;
-	
+
+	// a pessoa tem um nome
 	private String nome;
-	
+
+	// a pessoa tem uma idade
 	private Integer idade;
 
+	// getters e setters
 	public Long getId() {
 		return id;
 	}

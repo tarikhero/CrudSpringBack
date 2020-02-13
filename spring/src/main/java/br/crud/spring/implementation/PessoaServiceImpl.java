@@ -37,5 +37,10 @@ public class PessoaServiceImpl implements PessoaService {
 	public List<Pessoa> listar() {
 		return pessoaRepository.findAll();
 	}
+
+	@Override
+	public Pessoa atualizar(Pessoa pessoa) {
+		return pessoaRepository.saveAndFlush(pessoa);
+	}
 	
 }

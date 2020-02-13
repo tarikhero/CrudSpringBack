@@ -7,4 +7,7 @@ import br.crud.spring.model.Pessoa;
 
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
+	
+	Pessoa findPessoaById(Long id);
+
 }

@@ -40,14 +40,14 @@ public class PessoaController {
 	}
 
 	//Usando o Metodo DELETE, para excluir um dado do banco
-	@DeleteMapping("/deletar/{id}")
+	@DeleteMapping("/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
 	public void remover(@PathVariable Long id) {
 		pessoaRepository.deleteById(id);
 	}
 
 	//usando metodo PUT, para pegar um usuario e atualizar os seus dados
-	@PutMapping("/atualizar/{id}")
+	@PutMapping("/{id}")
 	public Pessoa atualizar(@PathVariable Long id, @Valid @RequestBody Pessoa pessoa) {
 		
 		Pessoa pessoaA = pessoaRepository.findPessoaById(id);

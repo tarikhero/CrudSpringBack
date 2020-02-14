@@ -4,7 +4,8 @@ import java.util.List;
 
 import br.crud.spring.model.Pessoa;
 
-public interface PessoaService {
+public interface PessoaService { 
+	
 
 	Pessoa cadastrar(Pessoa pessoa);
 	String remover(Long id);

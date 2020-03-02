@@ -63,5 +63,11 @@ public class PessoaController {
 	public ResponseEntity<List<Pessoa>> listar() {
 		return new ResponseEntity<List<Pessoa>>(pessoaRepository.findAll() , HttpStatus.OK);
 	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<Pessoa> getUsuario(@PathVariable Long id) {
+		return new ResponseEntity<Pessoa>(pessoaRepository.findPessoaById(id) , HttpStatus.OK);
+	}
+	
 
 }
